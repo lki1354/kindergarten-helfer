@@ -1,5 +1,9 @@
 {
   "name": "kindergarten-helfer",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "1302c781",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "backend": "pro"
 }
