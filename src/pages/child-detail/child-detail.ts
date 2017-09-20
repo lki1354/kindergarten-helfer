@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {_DetailPage} from "../_DetailPage";
 
 /**
  * Generated class for the ChildDetailPage page.
@@ -13,13 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-child-detail',
   templateUrl: 'child-detail.html',
 })
-export class ChildDetailPage {
+export class ChildDetailPage extends _DetailPage{
 
   name;
   description;
-  feature
+  feature;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    super();
   }
 
   ionViewDidLoad(){

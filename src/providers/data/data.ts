@@ -16,5 +16,11 @@ export class DataProvider {
     let newData = JSON.stringify(data);
     this.storage.set('kids_data', newData);
   }
+  remove(data){
+    return this.storage.remove(data);
+  }
+  removeAll(){
+    return this.storage.remove('kids_data');
+  }
 
 }

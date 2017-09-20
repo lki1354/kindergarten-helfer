@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {_DetailPage} from "../_DetailPage";
 import {_MasterPage} from "../_MasterPage";
 
 /**
- * Generated class for the AttributesSettingsPage page.
+ * Generated class for the DeletePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,17 +11,17 @@ import {_MasterPage} from "../_MasterPage";
 
 @IonicPage()
 @Component({
-  selector: 'page-attributes-settings',
-  templateUrl: 'attributes-settings.html',
+  selector: 'page-delete',
+  templateUrl: 'delete.html',
 })
-export class AttributesSettingsPage extends _MasterPage{
+export class DeletePage extends _MasterPage{
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     super()
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AttributesSettingsPage');
+    console.log('ionViewDidLoad DeletePage');
   }
 
 }

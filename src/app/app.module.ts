@@ -11,12 +11,20 @@ import { AddChildPage} from '../pages/add-child/add-child';
 import { ChildDetailPage} from '../pages/child-detail/child-detail';
 import { DataProvider } from '../providers/data/data';
 
+import { NavProxyService } from '../services/NavProxy.service';
+import {PlaceholderPage} from "../pages/placeholder/placeholder";
+import {DeletePage} from "../pages/delete/delete";
+import {AttributesSettingsPage} from "../pages/attributes-settings/attributes-settings";
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
 		AddChildPage,
-    ChildDetailPage
+    ChildDetailPage,
+    AttributesSettingsPage,
+    PlaceholderPage,
+    DeletePage
   ],
   imports: [
     BrowserModule,
@@ -28,9 +36,13 @@ import { DataProvider } from '../providers/data/data';
     MyApp,
     HomePage,
 		AddChildPage,
-    ChildDetailPage
+    ChildDetailPage,
+    PlaceholderPage,
+    AttributesSettingsPage,
+    DeletePage
   ],
   providers: [
+    NavProxyService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -13,17 +13,16 @@
   <ion-list>
 
     <ion-item>
-      <ion-label floating>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="name"></ion-input>
+      <ion-textarea placeholder="Name" [(ngModel)]="name"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Beschreibung</ion-label>
-      <ion-input type="text" [(ngModel)]="description"></ion-input>
+      <ion-textarea placeholder="Beschreibung" [(ngModel)]="description"></ion-textarea>
     </ion-item>
 
   </ion-list>
 
-  <button full ion-button color="secondary" (click)="saveChild()">Save</button>
+  <button full ion-button color="secondary" (click)="saveChild()">Speichern</button>
+  <button full ion-button color="secondary" (click)="saveChildAndNew()">Speicher und Kind hinzufügen</button>
 
 </ion-content>
