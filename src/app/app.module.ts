@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
+import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +16,7 @@ import { NavProxyService } from '../services/NavProxy.service';
 import {PlaceholderPage} from "../pages/placeholder/placeholder";
 import {DeletePage} from "../pages/delete/delete";
 import {AttributesSettingsPage} from "../pages/attributes-settings/attributes-settings";
+import { DataSaverProvider } from '../providers/data-saver/data-saver';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import {AttributesSettingsPage} from "../pages/attributes-settings/attributes-se
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    DataSaverProvider,
+    File
   ]
 })
 export class AppModule {}
