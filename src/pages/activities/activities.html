@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Aktivitäten
+    </ion-title>
+
+    <ion-buttons end>
+  		<button ion-button icon-only (click)="addActivitie()"><ion-icon name="add-circle"></ion-icon></button>
+  	</ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+		<ion-item *ngFor="let activitie of activities" (click)="viewActivitie(activitie)">
+    <ion-avatar item-start>
+      <img [src]="child.avatar">
+    </ion-avatar>
+    <h2>{{child.name}}</h2>
+
+      <!--
+      <ion-fab right bottom>
+        <button ion-button color="first" (click)="deleteChild(child)"><ion-icon name="remove-circle"></ion-icon></button>
+      </ion-fab>
+      -->
+
+  </ion-item>
+</ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="first" (click)="addChild()"><ion-icon name="create"></ion-icon></button>
+  </ion-fab>
+
+  <!--
+  <ion-fab left bottom>
+    <button ion-fab color="first" (click)="deleteAll()"><ion-icon name="remove-circle"></ion-icon></button>
+  </ion-fab>
+  -->
+</ion-content>
+

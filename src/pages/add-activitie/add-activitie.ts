@@ -12,18 +12,17 @@ import {DataProvider} from "../../providers/data/data";
 
 @IonicPage()
 @Component({
-  selector: 'page-add-child',
-  templateUrl: 'add-child.html',
+  selector: 'page-add-activitie',
+  templateUrl: 'add-activitie.html',
 })
-export class AddChildPage extends _DetailPage{
+export class AddActivitiePage extends _DetailPage{
 
   name;
-  description;
-  attributes;
+  attribute;
+  public attributes = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public view: ViewController, public dataService: DataProvider) {
     super()
-
     this.dataService.getData('attributes').then((attributes_stored) => {
       if(attributes_stored){
         this.attributes = JSON.parse(attributes_stored);
@@ -31,13 +30,12 @@ export class AddChildPage extends _DetailPage{
     });
   }
 
-  saveChild(){
-    let newChild= {
+  saveActivitie(){
+    let newActivitie= {
       name: this.name,
-      description: this.description,
-      attributes: this.attributes
+      attribute: this.attribute
     };
-    this.view.dismiss(newChild);
+    this.view.dismiss(newActivitie);
   }
 
 
@@ -46,3 +44,4 @@ export class AddChildPage extends _DetailPage{
  }
 
 }
+

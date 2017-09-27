@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Eigenschaften
+    </ion-title>
+
+    <ion-buttons end>
+  		<button ion-button icon-only (click)="addAttribute()"><ion-icon name="add-circle"></ion-icon></button>
+  	</ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+		<ion-item *ngFor="let attribute of attributes" (click)="viewAttribute(attribute)">
+    <h2>{{attribute.name}}</h2>
+
+      <!--
+      <ion-fab right bottom>
+        <button ion-button color="first" (click)="deleteAttribute(attribute)"><ion-icon name="remove-circle"></ion-icon></button>
+      </ion-fab>
+      -->
+
+  </ion-item>
+</ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="first" (click)="addAttribute()"><ion-icon name="create"></ion-icon></button>
+  </ion-fab>
+
+  <!--
+  <ion-fab left bottom>
+    <button ion-fab color="first" (click)="deleteAll()"><ion-icon name="remove-circle"></ion-icon></button>
+  </ion-fab>
+  -->
+</ion-content>
+

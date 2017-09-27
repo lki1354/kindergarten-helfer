@@ -8,19 +8,17 @@ export class DataProvider {
     //console.log('Hello DataProvider Provider');
   }
 
-  getData() {
-    return this.storage.get('kids_data');
+  getData(key) {
+    return this.storage.get(key);
   }
 
-  save(data){
+  save(key,data){
     let newData = JSON.stringify(data);
-    this.storage.set('kids_data', newData);
+    this.storage.set(key, newData);
   }
-  remove(data){
-    return this.storage.remove(data);
+  remove(key){
+    return this.storage.remove(key);
   }
-  removeAll(){
-    return this.storage.remove('kids_data');
-  }
+
 
 }

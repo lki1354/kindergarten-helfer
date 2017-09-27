@@ -8,20 +8,17 @@ import {NavProxyService} from "../../services/NavProxy.service";
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'kids.html'
 })
-export class HomePage extends _MasterPage{
+export class KidsPage extends _MasterPage{
 
 	public kids = [];
 
-  deleteButton;
-
   constructor(public navCtrl: NavController,public navParams: NavParams , public modalCtrl: ModalController, public dataService: DataProvider, private navProxy: NavProxyService) {
     super();
-    this.deleteButton = this.navParams.get('deleteButton');
-    this.dataService.getData().then((kids_data) => {
-      if(kids_data){
-        this.kids = JSON.parse(kids_data);
+    this.dataService.getData('kids').then((kids_stored) => {
+      if(kids_stored){
+        this.kids = JSON.parse(kids_stored);
       }
   });
   }
@@ -49,12 +46,12 @@ export class HomePage extends _MasterPage{
   saveChild(child){
     child.avatar = 'assets/img/kids/bear.jpg';
     this.kids.push(child);
-    this.dataService.save(this.kids)
+    this.dataService.save('kids',this.kids)
   }
   saveChildAndNew(child){
     child.avatar = 'assets/img/kids/bear.jpg';
     this.kids.push(child);
-    this.dataService.save(this.kids)
+    this.dataService.save('kids',this.kids)
   }
 
   viewChild(child){
@@ -66,8 +63,8 @@ export class HomePage extends _MasterPage{
   }
 
   deleteAll(){
-    this.dataService.removeAll()
-    this.navProxy.masterNav.setRoot(HomePage,null);
+    this.dataService.remove('kids')
+    this.navProxy.masterNav.setRoot(KidsPage,null);
   }
 
 

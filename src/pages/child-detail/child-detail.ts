@@ -18,7 +18,7 @@ export class ChildDetailPage extends _DetailPage{
 
   name;
   description;
-  feature;
+  attributes;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     super();
@@ -27,6 +27,7 @@ export class ChildDetailPage extends _DetailPage{
   ionViewDidLoad(){
     this.name = this.navParams.get('child').name;
     this.description = this.navParams.get('child').description;
+    this.attributes = this.navParams.get('child').attributes;
   }
 
   viewDetails(){

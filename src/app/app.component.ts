@@ -5,12 +5,13 @@ import { Events, MenuController, Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { KidsPage } from '../pages/kids/kids';
 import { AttributesSettingsPage } from '../pages/attributes-settings/attributes-settings'
 import { NavProxyService} from '../services/NavProxy.service'
 import {PlaceholderPage} from "../pages/placeholder/placeholder";
 import {DeletePage} from "../pages/delete/delete";
 import {_MasterPage} from "../pages/_MasterPage";
+import {TabsPage} from "../pages/tabs/tabs";
 
 @Component({
   templateUrl: 'app.html'
@@ -18,7 +19,7 @@ import {_MasterPage} from "../pages/_MasterPage";
 export class MyApp {
 
   @ViewChild('detailNav') detailNav: Nav;
-    @ViewChild('masterNav') masterNav: Nav;
+  @ViewChild('masterNav') masterNav: Nav;
 
   masterPage:any = null;
   detailPage:any = null;
@@ -40,11 +41,11 @@ export class MyApp {
 
             // set initial pages for
             // our nav controllers...
-            this.masterNav.setRoot(HomePage, { detailNavCtrl: this.detailNav });
+            this.masterNav.setRoot(TabsPage, { detailNavCtrl: this.detailNav });
             this.detailNav.setRoot(PlaceholderPage);
     });
        this.pages = [
-      { title: 'Kinder', component: HomePage,arg: null },
+      { title: 'Einstellungen', component: null,arg: null },
       { title: 'Vorlage', component: AttributesSettingsPage, arg: null},
          { title: 'Löschen', component: DeletePage, arg: {deleteAll: true} }
     ];

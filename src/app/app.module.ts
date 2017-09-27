@@ -7,7 +7,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { File } from '@ionic-native/file';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { KidsPage } from '../pages/kids/kids';
 import { AddChildPage} from '../pages/add-child/add-child';
 import { ChildDetailPage} from '../pages/child-detail/child-detail';
 import { DataProvider } from '../providers/data/data';
@@ -17,16 +17,30 @@ import {PlaceholderPage} from "../pages/placeholder/placeholder";
 import {DeletePage} from "../pages/delete/delete";
 import {AttributesSettingsPage} from "../pages/attributes-settings/attributes-settings";
 import { DataSaverProvider } from '../providers/data-saver/data-saver';
+import {TabsPage} from "../pages/tabs/tabs";
+import {AttributesPage} from "../pages/attributes/attributes";
+import {ActivitiesPage} from "../pages/activities/activities";
+import {AttributeDetailPage} from "../pages/attribute-detail/attribute-detail";
+import {AddAttributePage} from "../pages/add-attribute/add-attribute";
+import {ActivitieDetailPage} from "../pages/activitie-detail/activitie-detail";
+import {AddActivitiePage} from "../pages/add-activitie/add-activitie";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    KidsPage,
 		AddChildPage,
     ChildDetailPage,
     AttributesSettingsPage,
     PlaceholderPage,
-    DeletePage
+    DeletePage,
+    TabsPage,
+    AttributesPage,
+    ActivitiesPage,
+    AttributeDetailPage,
+    AddAttributePage,
+    ActivitieDetailPage,
+    AddActivitiePage
   ],
   imports: [
     BrowserModule,
@@ -36,12 +50,19 @@ import { DataSaverProvider } from '../providers/data-saver/data-saver';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    KidsPage,
 		AddChildPage,
     ChildDetailPage,
     PlaceholderPage,
     AttributesSettingsPage,
-    DeletePage
+    DeletePage,
+    TabsPage,
+    AttributesPage,
+    ActivitiesPage,
+    AttributeDetailPage,
+    AddAttributePage,
+    ActivitieDetailPage,
+    AddActivitiePage
   ],
   providers: [
     NavProxyService,

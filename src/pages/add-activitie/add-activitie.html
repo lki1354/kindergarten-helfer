@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Neue Aktivität hinzufügen
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-textarea placeholder="Name" [(ngModel)]="name"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+  <ion-label>Eigenschaft</ion-label>
+  <ion-select [(ngModel)]="attribute"  interface="popover">
+    <ion-option *ngFor="let att of attributes" [value]="att.name">{{att.name}}</ion-option>
+  </ion-select>
+  </ion-item>
+
+
+  </ion-list>
+
+  <button full ion-button color="secondary" (click)="saveActivitie()">Speichern</button>
+  <button full ion-button color="secondary" (click)="saveActivitieAndNew()">Speicher und Kind hinzufügen</button>
+
+</ion-content>

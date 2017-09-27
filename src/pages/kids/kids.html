@@ -7,6 +7,11 @@
     <ion-title>
       Kinder
     </ion-title>
+
+    <ion-buttons end>
+  		<button ion-button icon-only (click)="addChild()"><ion-icon name="add-circle"></ion-icon></button>
+  	</ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
@@ -29,10 +34,12 @@
 </ion-list>
 
   <ion-fab right bottom>
-    <button ion-fab color="first" (click)="addChild()"><ion-icon name="add-circle"></ion-icon></button>
+    <button ion-fab color="first" (click)="addChild()"><ion-icon name="create"></ion-icon></button>
   </ion-fab>
 
+  <!--
   <ion-fab left bottom>
     <button ion-fab color="first" (click)="deleteAll()"><ion-icon name="remove-circle"></ion-icon></button>
   </ion-fab>
+  -->
 </ion-content>
